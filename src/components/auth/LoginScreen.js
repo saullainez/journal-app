@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const LoginScreen = () => {
     return (
         <>
-            <h3 className="auth__title mb-5">Login</h3>
+            <h3 className="auth__title mb-5">Journal App</h3>
             <form>
                 <input
                     type="text"
@@ -28,7 +28,7 @@ export const LoginScreen = () => {
                 </button>
 
                 <div className="auth__social-networks">
-                    <p>Inicio de sesión con redes sociales</p>
+                    <p className="auth__text-alter-login">O inicia sesión con</p>
                     <div 
                         className="google-btn"
                     >
@@ -36,7 +36,7 @@ export const LoginScreen = () => {
                             <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
                         </div>
                         <p className="btn-text">
-                            <b>Iniciar sesión con Google</b>
+                            <b>Google</b>
                         </p>
                     </div>
                 </div>
