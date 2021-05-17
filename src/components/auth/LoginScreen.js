@@ -40,12 +40,15 @@ export const LoginScreen = () => {
                         </p>
                     </div>
                 </div>
+                <div className="text-center">
+                    <Link 
+                        to="/auth/register"
+                        className="link"
+                    >
+                        Registrarse
+                    </Link>
+                </div>
 
-                <Link 
-                    to="/auth/register"
-                >
-                    Registrarse
-                </Link>
             </form>
         </>
     )
