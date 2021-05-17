@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const LoginScreen = () => {
     return (
         <>
-            <h3 className="auth__title mb-5">Journal App</h3>
+            <h3 className="auth__title mb-5">Iniciar sesión</h3>
             <form>
                 <input
                     type="text"
