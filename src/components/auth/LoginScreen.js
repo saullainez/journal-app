@@ -8,14 +8,14 @@ export const LoginScreen = () => {
             <form>
                 <input
                     type="text"
-                    placeholder="Email"
+                    placeholder="Correo electrónico"
                     name="email"
                     className="auth__input"
                     autoComplete="off"
                 />
                 <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     name="password"
                     className="auth__input"
                 />
