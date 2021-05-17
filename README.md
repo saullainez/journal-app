@@ -1,4 +1,4 @@
-# TodoApp
+# JournalApp
  Aplicacion web desarrollada en React.
 
 # Funcionalidad
@@ -15,7 +15,7 @@
 
 
  ------------------------------------------------------------
- # TodoApp
+ # JournalApp
  Web application developed in React.
 
 # Functionality
