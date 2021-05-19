@@ -7,6 +7,7 @@
 
  # Lo que aprendí
  * Redux.
+ * Redux DevTools.
  * Store.
  * Middlewares.
  * Dispatch.
@@ -30,6 +31,7 @@
 
  # What I Learned
  * Redux.
+ * Redux DevTools.
  * Store.
  * Middlewares.
  * Dispatch.
