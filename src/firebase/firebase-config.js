@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "",
+    apiKey: "AIzaSyCs1Jg6-gNA6ZzH27TDLmVmz2QVDEPMg0M",
     authDomain: "react-journal-app-816a5.firebaseapp.com",
     projectId: "react-journal-app-816a5",
     storageBucket: "react-journal-app-816a5.appspot.com",
