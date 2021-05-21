@@ -1,12 +1,15 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { startLoginEmailPassword, startGoogleLogin } from '../../actions/auth'
-import { useForm } from '../../hooks/useForm'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { startLoginEmailPassword, startGoogleLogin } from '../../actions/auth';
+import { useForm } from '../../hooks/useForm';
+import validator from 'validator';
+import { removeError, setError } from '../../actions/ui';
 
 export const LoginScreen = () => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const { msgError } = useSelector( state => state.ui );
 
     const [ formValues, handleInoutChange ] = useForm({
         email: 'saullainez@hotmail.es',
@@ -16,18 +19,43 @@ export const LoginScreen = () => {
     const {email, password} = formValues;
 
     const handleLogin = (e) => {
+
         e.preventDefault();
-        dispatch( startLoginEmailPassword(email, password) );
+        if( isFormValid() ){
+            dispatch( startLoginEmailPassword(email, password) );
+        }
+        
     }
 
     const handleGoogleLogin = () => {
         dispatch(startGoogleLogin());
     }
 
+    const isFormValid = () => {
+        if (!validator.isEmail(email)){
+            dispatch(setError("El correo no es válido"));
+            return false;
+        }else if( password.length < 5){
+            dispatch(setError("La contraseña debe tener al menos cinco caracteres"));
+            return false;
+        }
+
+        dispatch(removeError());
+        return true;
+    }
+
     return (
         <>
             <h3 className="auth__title mb-5">Iniciar sesión</h3>
             <form onSubmit={ handleLogin }>
+                {
+                    msgError &&
+                    (
+                        <div className="auth__alert-error">
+                            { msgError }
+                        </div>
+                    )
+                }
                 <input
                     type="text"
                     placeholder="Correo electrónico"
