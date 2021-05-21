@@ -10,6 +10,7 @@ import { AuthRouter } from './AuthRouter';
 import { firebase } from '../firebase/firebase-config'
 import { useDispatch } from 'react-redux';
 import { login } from '../actions/auth';
+import { LoadingScreen } from '../components/auth/LoadingScreen';
 
 export const AppRouter = () => {
 
@@ -33,7 +34,7 @@ export const AppRouter = () => {
 
     if( checking ) {
         return (
-            <h1>Espere...</h1>
+            <LoadingScreen />
         )
     }
 
