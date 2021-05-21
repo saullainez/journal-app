@@ -9,7 +9,7 @@ import { removeError, setError } from '../../actions/ui';
 export const LoginScreen = () => {
 
     const dispatch = useDispatch();
-    const { msgError } = useSelector( state => state.ui );
+    const { msgError, loading } = useSelector( state => state.ui );
 
     const [ formValues, handleInoutChange ] = useForm({
         email: 'saullainez@hotmail.es',
@@ -76,6 +76,7 @@ export const LoginScreen = () => {
                 <button
                     className="btn btn-primary btn-block"
                     type="submit"
+                    disabled={loading}
 
                 >
                     Ingresar
