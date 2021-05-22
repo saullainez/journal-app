@@ -1,26 +1,35 @@
-import React from 'react'
+import React from 'react';
+import moment from 'moment';
+import 'moment/locale/es';
 
-export const JournalEntry = () => {
+export const JournalEntry = ({id, date, title, body, url}) => {
+
+    let noteDate = moment(date);
+    noteDate.locale('es');
+
     return (
         <div className="journal__entry pointer">
-            <div 
-                className="journal__entry-picture"
-                style={{
-                    backgroundSize:'cover',
-                    backgroundImage: 'url(https://iconape.com/wp-content/png_logo_vector/oficial-cabj-logo.png)'
-                }}
-            ></div>
+            {
+                url &&            
+                <div 
+                    className="journal__entry-picture"
+                    style={{
+                        backgroundSize:'cover',
+                        backgroundImage: `url(${url})`
+                    }}
+                ></div>
+            }
             <div className="journal__entry-body">
                 <p className="journal__entry-title">
-                    Un nuevo día
+                    { title }
                 </p>
                 <p className="journal__entry-content">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
+                    { body }
                 </p>
             </div>
             <div className="journal__entry-date-box">
-                <span>Monday</span>
-                <h4>28</h4>
+                <span>{ noteDate.format('ddd') }</span>
+                <h4>{ noteDate.format('D') }</h4>
             </div>
         </div>
     )
