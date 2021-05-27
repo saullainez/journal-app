@@ -57,7 +57,7 @@ export const NoteScreen = () => {
                     &&
                     (<div className="notes__image">
                         <img
-                            src="https://e00-ar-marca.uecdn.es/claro/assets/multimedia/imagenes/2020/06/21/15926966530661.jpg"
+                            src={note.url}
                             alt="Imagen"
                         />
                     </div>)
